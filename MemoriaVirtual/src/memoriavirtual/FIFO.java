@@ -16,7 +16,7 @@ public class FIFO {
     ArrayList<Integer> procesos = new ArrayList<>();
     ArrayList<Integer> insertos = new ArrayList<>();
     ArrayList<String> paginas = new ArrayList<>(3);
-    ArrayList<Integer> colisiones = new ArrayList<>();
+    int fallos = 0;
     
     public FIFO(ArrayList<Integer> procesos) {
         
@@ -33,7 +33,7 @@ public class FIFO {
         
         for(int i=0; i<this.procesos.size(); i++){            
             if(i>2){
-                if(this.paginas.contains(this.procesos.get(i))){
+                if(this.paginas.contains(Integer.toString(this.procesos.get(i)))){
                     a = false;
                     imprimir(i, a);
                 }else{
@@ -42,6 +42,7 @@ public class FIFO {
                     this.insertos.add(this.procesos.get(i));
                     a = true;
                     imprimir(i, a);
+                    this.fallos++;
                 }                 
             }else{
                 if(this.paginas.contains(Integer.toString(this.procesos.get(i)))){
@@ -54,30 +55,30 @@ public class FIFO {
                     contador++;
                     a = true;
                     imprimir(i, a);
+                    this.fallos++;
                 }                
             }
         }
+        System.out.println("\nLa secuencia final es |" + this.paginas.get(0) + "|" + this.paginas.get(1) + "|" + this.paginas.get(2) + "|" + " con " + this.fallos +" fallos");
     }
     
     
-    private void imprimir (int i, boolean a){
-        
+    private void imprimir (int i, boolean a){        
         if(a){
-           System.out.println("\nEl proceso " + this.procesos.get(i) + " se agregó a memoria"); 
+           System.out.println("\nEl proceso " + this.procesos.get(i) + " se agregó a memoria");            
         }
         else{
             System.out.println("El proceso " + this.procesos.get(i) + " ya está en memoria"); 
         }      
         for(int j = 0 ; j<this.paginas.size(); j++){
             switch(j){
-                case 0: System.out.print("\n|" + this.paginas.get(j)); 
+                case 0: System.out.print("\n|" + this.paginas.get(j));                         
                         break;
-                case 1: System.out.print("|" + this.paginas.get(j));  
+                case 1: System.out.print("|" + this.paginas.get(j));                          
                         break;
-                case 2: System.out.println("|" + this.paginas.get(j) + "|");  
+                case 2: System.out.println("|" + this.paginas.get(j) + "|");                          
                         break;
-            }                     
+            }               
         }        
-    }
-    
+    }    
 }
