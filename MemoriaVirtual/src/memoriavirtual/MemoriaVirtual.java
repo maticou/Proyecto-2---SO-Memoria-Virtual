@@ -5,17 +5,21 @@
  */
 package memoriavirtual;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author matiassebastianparra
  */
 public class MemoriaVirtual {
 
+    ArrayList<Integer> procesos = new ArrayList<>();
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // TODO code application logic here           
     }
     
 }
