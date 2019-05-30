@@ -5,10 +5,15 @@
  */
 package memoriavirtual;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author matiassebastianparra
  */
 public class LFU {
-    
+
+    public LFU(ArrayList<Integer> procesos ) {
+        
+    }           
 }

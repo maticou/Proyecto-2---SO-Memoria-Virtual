@@ -5,10 +5,16 @@
  */
 package memoriavirtual;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author matiassebastianparra
  */
 public class FIFO {
+
+    public FIFO(ArrayList<Integer> procesos) {
+        
+    }        
     
 }
