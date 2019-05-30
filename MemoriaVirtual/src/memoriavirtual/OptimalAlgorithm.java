@@ -14,6 +14,6 @@ import java.util.ArrayList;
 public class OptimalAlgorithm {
 
     public OptimalAlgorithm(ArrayList<Integer> procesos) {
-        
+        System.out.printf("Bienvenido a Optimal Algorithm \n");
     }        
 }

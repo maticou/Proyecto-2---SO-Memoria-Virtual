@@ -14,6 +14,6 @@ import java.util.ArrayList;
 public class LRU {
 
     public LRU(ArrayList<Integer> procesos) {
-        
+        System.out.printf("Bienvenido a LRU \n");
     }           
 }

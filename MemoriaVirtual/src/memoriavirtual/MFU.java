@@ -14,6 +14,6 @@ import java.util.ArrayList;
 public class MFU {
 
     public MFU(ArrayList<Integer> procesos) {
-        
+        System.out.printf("Bienvenido a MFU \n");
     }            
 }

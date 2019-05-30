@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class FIFO {
 
     public FIFO(ArrayList<Integer> procesos) {
-        
+        System.out.printf("Bienvenido a FIFO \n");
     }        
     
 }
