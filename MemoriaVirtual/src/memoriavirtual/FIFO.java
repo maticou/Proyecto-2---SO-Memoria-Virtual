@@ -17,6 +17,7 @@ public class FIFO {
     ArrayList<Integer> insertos = new ArrayList<>();
     ArrayList<String> paginas = new ArrayList<>(3);
     int fallos = 0;
+    int posicion = 0;
     
     public FIFO(ArrayList<Integer> procesos) {
         
@@ -32,17 +33,21 @@ public class FIFO {
         boolean a;
         
         for(int i=0; i<this.procesos.size(); i++){            
-            if(i>2){
+            if(this.paginas.get(2) != " "){
                 if(this.paginas.contains(Integer.toString(this.procesos.get(i)))){
                     a = false;
                     imprimir(i, a);
                 }else{
-                    this.paginas.remove(0);
-                    this.paginas.add(2, Integer.toString(this.procesos.get(i)));
+                    if(this.posicion > 2){
+                        this.posicion = 0;
+                    }
+                    this.paginas.remove(this.posicion);
+                    this.paginas.add(this.posicion, Integer.toString(this.procesos.get(i)));
                     this.insertos.add(this.procesos.get(i));
                     a = true;
                     imprimir(i, a);
                     this.fallos++;
+                    this.posicion++;
                 }                 
             }else{
                 if(this.paginas.contains(Integer.toString(this.procesos.get(i)))){
