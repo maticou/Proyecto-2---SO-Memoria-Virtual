@@ -33,7 +33,7 @@ public class FIFO {
         boolean a;
         
         for(int i=0; i<this.procesos.size(); i++){            
-            if(this.paginas.get(2) != " "){
+            if(!" ".equals(this.paginas.get(2))){
                 if(this.paginas.contains(Integer.toString(this.procesos.get(i)))){
                     a = false;
                     imprimir(i, a);
