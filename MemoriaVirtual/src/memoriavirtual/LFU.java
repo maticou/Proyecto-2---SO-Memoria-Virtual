@@ -8,12 +8,6 @@ package memoriavirtual;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
-import static java.util.Comparator.naturalOrder;
-import java.util.HashMap;
-import java.util.List;
-import static java.util.stream.Collectors.toList;
-import static oracle.jrockit.jfr.events.Bits.intValue;
-import static sun.security.krb5.Confounder.intValue;
 
 /**
  *
@@ -77,11 +71,7 @@ public class LFU {
                     a = false;
                     imprimir(i, a);
                 }else{    
-                    for(int g=0;g<this.lista.size();g++){
-                        System.out.println("\n22323233 " + this.lista.get(g)); 
-                    }
                     int min = this.lista.indexOf(Collections.min(this.lista));
-                    System.out.print("MAJSJASO"+min);
                     this.paginas.remove(min);
                     this.paginas.add(min, Double.toString(this.repeticiones.get(i)));
                     this.lista.remove(min);
